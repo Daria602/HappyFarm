@@ -7,12 +7,11 @@ private:
 	bool playing;
 
 	Character character;
+	Inventory inventory;
 
 public:
 	Game();
 	virtual ~Game();
-
-	//accessors
 
 	inline bool getPlaying() const { return this->playing; }
 
@@ -22,4 +21,5 @@ public:
 
 	void mainMenu();
 };
+
 
