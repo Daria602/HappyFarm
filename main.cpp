@@ -1,5 +1,9 @@
 #include "Game.h"
-
+std::ostream& operator<<(std::ostream& os, const GameObject& go_)
+{
+	os << go_.name;
+	return os;
+}
 int main()
 {
 	srand(time(NULL));
@@ -8,6 +12,7 @@ int main()
 
 	game.initGame();
 
+	
 	while (game.getPlaying())
 	{
 		game.mainMenu();
