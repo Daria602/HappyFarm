@@ -8,6 +8,16 @@ Game::Game()
 	this->choice = 0;
 	this->playing = true;
 
+	GameObject wateringCan, pickaxe, knife, fishingRod;
+	wateringCan.initGameObject("Watering can", 50);
+	pickaxe.initGameObject("Pickaxe", 50);
+	knife.initGameObject("Knife", 50);
+	fishingRod.initGameObject("Fishing rod", 50);
+	this->inventory.addToInventory(wateringCan);
+	this->inventory.addToInventory(pickaxe);
+	this->inventory.addToInventory(knife);
+	this->inventory.addToInventory(fishingRod);
+
 }
 
 Game::~Game()
@@ -29,10 +39,12 @@ void Game::mainMenu()
 	std::cout << "1: Travel" << std::endl;
 	std::cout << "2: Show status" << std::endl;
 	std::cout << "3: Show levels" << std::endl;
+	std::cout << "4: Inventory" << std::endl;
 	std::cout << "0: Quit" << std::endl;
 
 	std::cout << "Your choice:  " << std::endl;
 	std::cin >> choice;
+
 
 	switch (choice)
 	{
@@ -44,6 +56,13 @@ void Game::mainMenu()
 		break;
 	case 3:
 		character.showLevels();
+		break;
+	case 4:
+		inventory.setToTrue();
+		while (inventory.getInInventoryMenu())
+		{
+			inventory.inventoryMenu();
+		}
 		break;
 	
 	default:
