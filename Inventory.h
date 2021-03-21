@@ -7,17 +7,22 @@ class Inventory
 private:
 	int numberItems;
 	int capacity;
-	GameObject** backpack;
+	std::vector<GameObject> backpack;
+
+	bool inInventoryMenu;
 
 public:
 	Inventory();
 	virtual ~Inventory();
 
-	void expand();
-	void initialize();
-	void addToInventory(const GameObject& item);
-	void removeFromInventory(std::string nameOfItem);
 
+	inline bool getInInventoryMenu() const { return this->inInventoryMenu; }
+	void setToTrue() { this->inInventoryMenu = true;}
+	void inventoryMenu();
+
+	void addToInventory(GameObject item);
+	void removeFromInventory();
+	void showInventory();
 	
 };
 
