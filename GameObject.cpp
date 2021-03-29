@@ -1,6 +1,10 @@
 #include "GameObject.h"
 
-
+std::ostream& operator<<(std::ostream& os, const GameObject& go_)
+{
+	os << go_.name;
+	return os;
+}
 
 GameObject::GameObject()
 {
