@@ -28,19 +28,22 @@ void Inventory::inventoryMenu()
 	int choice;
 	std::cin >> choice;
 
-	switch (choice)
+	while (getInInventoryMenu())
 	{
-	case 1:
-		showInventory();
-		break;
-	case 2:
-		removeFromInventory();
-		break;
-	case 0:
-		this->inInventoryMenu = false;
-		break;
-	default:
-		break;
+		switch (choice)
+		{
+		case 1:
+			showInventory();
+			break;
+		case 2:
+			removeFromInventory();
+			break;
+		case 0:
+			this->inInventoryMenu = false;
+			break;
+		default:
+			break;
+		}
 	}
 
 
