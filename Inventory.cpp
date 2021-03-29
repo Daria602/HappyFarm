@@ -80,6 +80,7 @@ void Inventory::removeFromInventory()
 		if (this->backpack[i].getName() == nameOfItem)
 		{
 			this->backpack.erase(this->backpack.begin() + i);
+			break;
 		}
 	}
 	if (this->backpack.size() == numberItems)
