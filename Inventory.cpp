@@ -19,17 +19,17 @@ Inventory::~Inventory()
 
 void Inventory::inventoryMenu()
 {
-	std::cout << " = Inventory = " << std::endl;
-	std::cout << "1: Show inventory" << std::endl;
-	std::cout << "2: Remove from inventory" << std::endl;
-	std::cout << "0: Back" << std::endl;
-
-	std::cout << "Your choice:  " << std::endl;
-	int choice;
-	std::cin >> choice;
-
 	while (getInInventoryMenu())
 	{
+		std::cout << " = Inventory = " << std::endl;
+		std::cout << "1: Show inventory" << std::endl;
+		std::cout << "2: Remove from inventory" << std::endl;
+		std::cout << "0: Back" << std::endl;
+
+		std::cout << "Your choice:  " << std::endl;
+		int choice;
+	
+		std::cin >> choice;
 		switch (choice)
 		{
 		case 1:
@@ -45,7 +45,6 @@ void Inventory::inventoryMenu()
 			break;
 		}
 	}
-
 
 }
 
