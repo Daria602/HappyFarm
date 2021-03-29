@@ -59,10 +59,7 @@ void Game::mainMenu()
 		break;
 	case 4:
 		inventory.setToTrue();
-		while (inventory.getInInventoryMenu())
-		{
-			inventory.inventoryMenu();
-		}
+		inventory.inventoryMenu();
 		break;
 	
 	default:
