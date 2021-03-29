@@ -38,6 +38,15 @@ Character::~Character()
 
 }
 
+int Character::nextLevel(int level)
+{
+	int result;
+
+	result = static_cast<int>((50 / 3) * ((pow(level, 3) - 6 * pow(level, 2)) + 17 * level - 12)) + 100;
+
+	return result;
+}
+
 void Character::initCharacter(std::string name)
 {
 	this->xPos = 0.0;
@@ -57,16 +66,16 @@ void Character::initCharacter(std::string name)
 	this->fishingLvl = 0;
 
 	this->expFarming = 0;
-	this->nextExpFarming = static_cast<int>((50 / 3) * ((pow(farmingLvl, 3) - 6 * pow(farmingLvl, 2)) + 17 * farmingLvl - 12))+100;
+	this->nextExpFarming = nextLevel(expFarming);
 
 	this->expMining = 0;
-	this->nextExpMining = static_cast<int>((50 / 3) * ((pow(miningLvl, 3) - 6 * pow(miningLvl, 2)) + 17 * miningLvl - 12))+100;
+	this->nextExpMining = nextLevel(expMining);
 
 	this->expCombat = 0;
-	this->nextExpCombat = static_cast<int>((50 / 3) * ((pow(combatLvl, 3) - 6 * pow(combatLvl, 2)) + 17 * combatLvl - 12))+100;
+	this->nextExpCombat = nextLevel(expCombat);
 
 	this->expFishing = 0;
-	this->nextExpFishing = static_cast<int>((50 / 3) * ((pow(fishingLvl, 3) - 6 * pow(fishingLvl, 2)) + 17 * fishingLvl - 12));
+	this->nextExpFishing = nextLevel(expFishing);
 
 }
 
