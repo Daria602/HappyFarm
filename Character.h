@@ -35,6 +35,8 @@ private:
 
 	int expFishing;
 	int nextExpFishing;
+	
+	int nextLevel(int level);
 
 public:
 	Character();
